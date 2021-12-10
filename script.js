@@ -19,5 +19,45 @@ const quotesArr = [
   `Nearly all men can stand adversity, but if you want to test a man's character, give him power. — Abraham Lincoln`,
   `Attitude is a little thing that makes a big difference. — Winston Churchill`,
   `When I was 5 years old, my mother always told me that happiness was the key to life. When I went to school, they asked me what I wanted to be when I grew up. I wrote down "happy." They told me I didn't understand the assignment, and I told them they didn't understand life. — John Lennon`,
-  `The old believe everything, the middle-aged suspect everything, the young know everything. — Oscar Wilde`
+  `The old believe everything, the middle-aged suspect everything, the young know everything. — Oscar Wilde`,
 ];
+// Add additional quotes to the quotes array
+let num = quotesArr.length - 1;
+
+const addQuote = (str) => {
+  quotesArr.push(str);
+  return num++;
+};
+/*Test addQuote
+addQuote('Be happy, it drives people crazy.');  
+console.log(quotesArr[quotesArr.length - 1]); 
+console.log(num)
+console.log(quotesArr.length - 1);*/
+
+let randomIndex = Math.floor(Math.random() * num);
+const usedArr = [];
+
+// randomQuotes will pick a random index in the array including ones added, then the quote used will be stored in a usedArray, until quotes counter is 0 then it will use from the Used Array.
+function randomQuotes() {
+  const index = randomIndex;
+  let quotesCounter = quotesArr.length;
+  let usedCounter = 0;
+  if (usedCounter !== 20) {
+    console.log(quotesArr[index]);
+    usedArr.push(quotesArr[index]);
+    quotesArr.splice(index, 1);
+    quotesCounter--;
+    return usedCounter++;
+  } else if (quotesCounter !== 20) {
+    console.log(usedArr[0]);
+    quotesArr.push(usedArr[0]);
+    usedArr.splice(usedArr[0], 1);
+    usedCounter--;
+    return quotesCounter++;
+  }
+};
+randomQuotes(); //test
+randomQuotes(); //test
+randomQuotes(); //test
+randomQuotes(); //test
+console.log(usedArr.length, quotesArr.length);
