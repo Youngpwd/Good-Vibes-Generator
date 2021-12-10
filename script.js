@@ -1,4 +1,4 @@
-// An array of quotes, 20 total.
+// An array of quotes, 20 total. More can be added.
 const quotesArr = [
   `You are the antibodies kicking in as the planet fights its fever. — Bill Mckibben`,
   `Keep your face to the sunshine and you cannot see a shadow. — Helen Keller`,
@@ -23,41 +23,25 @@ const quotesArr = [
 ];
 // Add additional quotes to the quotes array
 let num = quotesArr.length - 1;
-
 const addQuote = (str) => {
   quotesArr.push(str);
   return num++;
 };
-/*Test addQuote
+/* //Test addQuote
 addQuote('Be happy, it drives people crazy.');  
 console.log(quotesArr[quotesArr.length - 1]); 
 console.log(num)
-console.log(quotesArr.length - 1);*/
+*/
+// randomQuotes will pick a random index in the array including ones added
+const randomQuotes = () => console.log(quotesArr[Math.floor(Math.random() * num)]); //temp
+  // todo return quotesArr[Math.floor(Math.random() * num)];
 
-let randomIndex = Math.floor(Math.random() * num);
-const usedArr = [];
 
-// randomQuotes will pick a random index in the array including ones added, then the quote used will be stored in a usedArray, until quotes counter is 0 then it will use from the Used Array.
-function randomQuotes() {
-  const index = randomIndex;
-  let quotesCounter = quotesArr.length;
-  let usedCounter = 0;
-  if (usedCounter !== 20) {
-    console.log(quotesArr[index]);
-    usedArr.push(quotesArr[index]);
-    quotesArr.splice(index, 1);
-    quotesCounter--;
-    return usedCounter++;
-  } else if (quotesCounter !== 20) {
-    console.log(usedArr[0]);
-    quotesArr.push(usedArr[0]);
-    usedArr.splice(usedArr[0], 1);
-    usedCounter--;
-    return quotesCounter++;
-  }
+
+/*//randomQuotes testing
+randomQuotes(); //test*/
+const startGame = () => {
+
 };
-randomQuotes(); //test
-randomQuotes(); //test
-randomQuotes(); //test
-randomQuotes(); //test
-console.log(usedArr.length, quotesArr.length);
+
+function greetWithQuote()
