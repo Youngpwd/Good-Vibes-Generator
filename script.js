@@ -1,4 +1,4 @@
-// An array of quotes, 20 total. More can be added.
+// An array of quotes, 20 total.
 const quotesArr = [
   `You are the antibodies kicking in as the planet fights its fever. — Bill Mckibben`,
   `Keep your face to the sunshine and you cannot see a shadow. — Helen Keller`,
@@ -21,27 +21,18 @@ const quotesArr = [
   `When I was 5 years old, my mother always told me that happiness was the key to life. When I went to school, they asked me what I wanted to be when I grew up. I wrote down "happy." They told me I didn't understand the assignment, and I told them they didn't understand life. — John Lennon`,
   `The old believe everything, the middle-aged suspect everything, the young know everything. — Oscar Wilde`,
 ];
-// Add additional quotes to the quotes array
-let num = quotesArr.length - 1;
-const addQuote = (str) => {
-  quotesArr.push(str);
-  return num++;
-};
-/* //Test addQuote
-addQuote('Be happy, it drives people crazy.');  
-console.log(quotesArr[quotesArr.length - 1]); 
-console.log(num)
-*/
+let num = quotesArr.length - 1; // Num is used for randomQuotes
 // randomQuotes will pick a random index in the array including ones added
-const randomQuotes = () => console.log(quotesArr[Math.floor(Math.random() * num)]); //temp
-  // todo return quotesArr[Math.floor(Math.random() * num)];
-
-
-
-/*//randomQuotes testing
-randomQuotes(); //test*/
-const startGame = () => {
-
+const randomQuotes = () => { 
+  let index = Math.floor(Math.random() * num)
+  return quotesArr[index];
 };
+const todayDate = new Date().toISOString().slice(0, 10);
+//console.log(todayDate);
 
-function greetWithQuote()
+function greetWithQuote() {
+  console.log(`Hello, Todays Date is ${todayDate}`);
+  console.log("Your Quote for the day is:");
+  console.log(randomQuotes());
+}
+greetWithQuote();
