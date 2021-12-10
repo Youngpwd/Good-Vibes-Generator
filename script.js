@@ -22,7 +22,7 @@ const quotesArr = [
   `The old believe everything, the middle-aged suspect everything, the young know everything. — Oscar Wilde`,
 ];
 let num = quotesArr.length - 1; // Num is used for randomQuotes
-// randomQuotes will pick a random index in the array including ones added
+// randomQuotes will pick a random index in the array
 const randomQuotes = () => { 
   let index = Math.floor(Math.random() * num)
   return quotesArr[index];
