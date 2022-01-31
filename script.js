@@ -30,9 +30,31 @@ const randomQuotes = () => {
 const todayDate = new Date().toISOString().slice(0, 10);
 //console.log(todayDate);
 
-function greetWithQuote() {
+/*function greetWithQuote() {
   console.log(`Hello, Todays Date is ${todayDate}`);
   console.log("Your Quote for the day is:");
   console.log(randomQuotes());
 }
-greetWithQuote();
+greetWithQuote();*/
+
+//DOM
+let date = document.getElementById('date');
+let quote = document.getElementById('quote');
+let view = document.getElementById('bttn-view');
+let quoteContainer = document.getElementById('container-quote');
+let reset = document.getElementById('bttn-reset');
+
+const viewQuote = () => {
+  date.innerHTML = todayDate;
+  date.style.visibility = 'visible';
+  quote.innerHTML = randomQuotes();
+  quoteContainer.style.visibility = 'visible';
+}
+
+const resetQuote = () => {
+  date.style.visibility = 'hidden';
+  quoteContainer.style.visibility = 'hidden';
+}
+
+view.addEventListener('click', viewQuote);
+reset.addEventListener('click', resetQuote);

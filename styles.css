@@ -1,0 +1,46 @@
+body {
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  background-color: rgb(169, 255, 169);
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 46px;
+  color: rgb(0, 0, 0);
+}
+
+button {
+  font-size: 21px;
+  padding: 10px;
+  width: 150px;
+  margin: 20px;
+}
+
+button:hover {
+    border: 2px solid black;
+}
+
+.date {
+    font-size: 32px;
+    margin: 0;
+    position: relative;
+    top: 90px;
+    visibility: hidden;
+}
+
+
+.quote {
+  background-color: honeydew;
+  display: block;
+  position: relative;
+  font-size: 28px;
+  width: 600px;
+  height: fit-content;
+  margin: 0 auto;
+  top: 100px;
+  padding: 80px;
+  border-radius: 50%;
+  visibility: hidden;
+}
