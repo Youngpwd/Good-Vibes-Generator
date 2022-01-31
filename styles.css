@@ -9,6 +9,8 @@ body {
 h1 {
   font-size: 46px;
   color: rgb(0, 0, 0);
+  width: fit-content;
+  margin: 0 auto;
 }
 
 button {
@@ -36,7 +38,7 @@ button:hover {
   display: block;
   position: relative;
   font-size: 28px;
-  width: 600px;
+  width: 400px;
   height: fit-content;
   margin: 0 auto;
   top: 100px;
